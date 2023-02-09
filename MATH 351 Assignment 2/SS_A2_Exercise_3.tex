@@ -1,0 +1,119 @@
+\documentclass[10pt]{article}
+
+\setlength{\parindent}{1.5eM}
+
+\setlength{\parskip}{0ex}
+
+\pagestyle{empty}
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\title{MATH 351 Assignment 2 Exercise 3}
+\author{\textsc{\textit{Steven Sharp}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\begin{center}
+\rule{\textwidth}{0.5pt}
+\end{center}
+
+One of my favorite mathematical operators is the matrix exponential, which has fostered a wide variety of reactions, from awe at its beauty to disgust towards its blatant and flagrant abuse of exponential notation.
+
+Let $B$ be an $n\times n$ matrix. The matrix exponential of $B$ is defined by
+\begin{equation}
+e^B = I_n + \sum_{k=1}^\infty \frac{1}{k!} B^k.
+\end{equation}
+
+For example,
+\begin{align}
+\nonumber e^{\begin{bmatrix}
+    0 & -x \\
+    x & 0 \\
+  \end{bmatrix}}&=\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+  \end{bmatrix}+\frac{x}{1!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}+\frac{x^2}{2!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^2+\frac{x^3}{3!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^3+\frac{x^4}{4!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^4\\\nonumber
+&\qquad+\frac{x^5}{5!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^5+\frac{x^6}{6!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^6+\frac{x^7}{7!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^7+\frac{x^8}{8!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}^8\ldots\\\nonumber
+&=\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+  \end{bmatrix}+x\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}+\frac{x^2}{2!}\begin{bmatrix}
+    -1 & 0 \\
+    0 & -1 \\
+  \end{bmatrix}+\frac{x^3}{3!}\begin{bmatrix}
+    0 & 1 \\
+    -1 & 0 \\
+  \end{bmatrix}+\frac{x^4}{4!}\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+  \end{bmatrix}\\\nonumber
+&\qquad+\frac{x^5}{5!}\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+  \end{bmatrix}+\frac{x^6}{6!}\begin{bmatrix}
+    -1 & 0 \\
+    0 & -1 \\
+  \end{bmatrix}+\frac{x^7}{7!}\begin{bmatrix}
+    0 & 1 \\
+    -1 & 0 \\
+  \end{bmatrix}+\frac{x^8}{8!}\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+  \end{bmatrix}\ldots\\\nonumber
+&=\begin{bmatrix}
+1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!}-\ldots & -x+\frac{x^3}{3!}-\frac{x^5}{5!}+\frac{x^7}{7!}-\ldots \\
+x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\ldots & 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!}-\ldots \\
+\end{bmatrix}\\
+&=\begin{bmatrix}
+\cos x & -\sin x \\
+\sin x & \cos x \\
+\end{bmatrix},
+\end{align}
+which produces a 2-dimensional rotation matrix for a counterclockwise rotation of $x$ radians.
+
+A brief review of diagonalization is helpful to understand the utility of the matrix exponential. An $n\times n$ matrix $A$ is diagonalizable if and only if it can be written as the product $PQP^{-1}$, where $Q$ is a diagonal $n\times n$ matrix containing the eigenvalues of $A$ and $P$ is an invertible matrix with the corresponding eigenvectors. This requires the matrix to have $n$ linearly independent eigenvectors. In other words, $A$ can be \textit{spectrally decomposed} into the matrices $P$ and $Q$. Note that we are only considering diagonalization over $\mathbb{R}$ as there are some matrices that are not diagonalizable over $\mathbb{R}$ but are diagonalizable over $\mathbb{C}$, e.g. rotation matrices.
+
+The matrix exponential is most useful for computation when used on a diagonalizable matrix. Evaluating all of the matrix mutliplication operations for non-diagonalizable matrices is very computationally expensive, with the most optimized algorithms for square matrix multiplication reaching a measly $\mathcal{O}(n^{2.37188})$ time, and that's for matrices far too large to compute with present-day technology. Without optimization techniques, square matrix multiplication is an $\mathcal{O}(n^3)$ operation, so it would be imperative to avoid nieve matrix multiplication in situations where processing time is critical; for example, a spacecraft's onboard GNC processing unit using long sequences of matrix multiplications to convert between reference frames and analyze stability for control laws needs to carry out those operations around 10 times faster than the dynamics of the system just to achieve asymptotic stability, not even accounting for perturbations. Diagonalizable matrices have the useful property that for any diagonalizable matrix $A$, the $n$th power of $A$ can be simplified by spectral decomposition into $PQ^nP^{-1}$. Matrix multiplication of diagonal matrices is an $\mathcal{O}(n^2)$ operation, improving immensely upon the nieve matrix multiplication algorithm. The matrix exponential is defined as an infinite sum of powers of diagonal matrices, and so it holds true that for $A$,
+\begin{equation}
+e^A = Pe^QP^{-1}.
+\end{equation}
+
+This reduction in operational complexity is especially useful for computations in Lyapunov stability analysis. The time-varying deviation from an equilibrium condition $\mathbf{x}^*$, $\Delta \mathbf{x}(t)$, can be approximated in the first order as $e^{B t}\Delta \mathbf{x}(0),$ where $B = \frac{\partial{\dot{\mathbf{x}}}}{\partial{\mathbf{x}}}$.
+
+\begin{center}
+\rule{\textwidth}{0.5pt}
+\end{center}
+
+\end{document}

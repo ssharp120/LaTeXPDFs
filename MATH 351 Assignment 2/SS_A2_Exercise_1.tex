@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+
+\setlength{\parindent}{1.5eM}
+
+\setlength{\parskip}{0ex}
+
+\pagestyle{empty}
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\title{MATH 351 Assignment 2 Exercise 1}
+\author{\textsc{\textit{Steven Sharp}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\begin{center}
+\rule{\textwidth}{0.5pt}
+\end{center}
+
+Every mathematical statement, such as $\sum^\infty_{n=1} \, 1/n^2 = \pi^2/6$, should be part of a sentence. Even equations need punctuation!
+
+The notation $\underset{x \to a}{\lim} f(x) = L$ means that for every $\varepsilon > 0$ there is a $\delta > 0$ such that $|x - a| < \delta$ implies $|f(x) - L| < \varepsilon$. An incorrect way to typeset this definition is
+% pointer to equation in memory :)
+\begin{equation*}
+\forall(\varepsilon > 0)\exists(\delta > 0)\ni(|x-a|<\delta\implies|f(x) - L| < \varepsilon).
+\end{equation*}
+The symbols $\forall$, $\exists$, $\ni$, and $\implies$ should be used only in the context of the mathematical subject of formal logic and should not replace the words ``for all'', ``there exists'', and ``such that'', and ``implies''.
+
+One of your instructor's favorite mathematical statements is
+\begin{equation*}
+n!\approx\sqrt{2\pi n}\left({\frac{n}{e}}\right)^n,
+\end{equation*}
+otherwise known as Stirling's formula. As an example, $100!$ is approximately equal to $\sqrt{200\pi}(100/e)^{100}\approx9.32\times10^{157}$.
+
+The following is true:
+\begin{align*}
+\left| \int_1^a \frac{\sin x}{x} \, dx\right| & \leq \int_1^a \left| \frac{\sin x}{x}\right| \, dx \\
+& \leq \int_1^a \frac{1}{x} \, dx \\
+& = \ln a.
+\end{align*}
+
+After first simplifying using the exponential and the natural log functions, L'H\^opital's rule can be used to evaluate $\underset{x \to 2^-}{\lim}\,(4-x)^{1/(2-x)}$.
+
+Take $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. The inner product of $\mathbf{x}$ and $\mathbf{y}$ is defined by $\langle\mathbf{x},\mathbf{y}\rangle = \mathbf{x}^\intercal\mathbf{y}$. It follows that
+\begin{equation*}
+\langle\mathbf{x}, \mathbf{x}\rangle = \mathbf{x}^\intercal\mathbf{x} = \|\mathbf{x}\|^2,
+\end{equation*}
+which is always a non-negative real number.
+
+\begin{center}
+\rule{\textwidth}{0.5pt}
+\end{center}
+
+\end{document}
