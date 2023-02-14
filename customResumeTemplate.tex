@@ -1,0 +1,130 @@
+% Compile with XeLaTeX
+
+\documentclass{article}[11pt]
+
+\usepackage{amsmath,amssymb,enumitem,xcolor,mathspec,titlesec}
+\usepackage[left=1in,right=1in,top=0.8in,bottom=0.6in]{geometry}
+
+% https://universitymarketing.calpoly.edu/brand-guidelines/the-cal-poly-name/
+\definecolor{CalPolyGreen}{HTML}{154734}
+
+\definecolor{LinkBlue}{HTML}{3333EE}
+
+\usepackage[colorlinks = true,
+urlcolor = LinkBlue,
+linkcolor = LinkBlue,
+citecolor = LinkBlue]{hyperref}
+
+\setmainfont{Verdana}
+
+\pagestyle{empty}
+
+\titleformat*{\section}{\large\bfseries\color{CalPolyGreen}}
+
+\begin{document}
+
+\begin{center}
+{\fontsize{1cm}{1cm}\textbf{Steven Sharp}}
+
+sksharp@calpoly.edu\qquad
+\begin{small}(209) 251-3252\end{small}
+
+\href{https://github.com/ssharp120/ClassworkPortfolio}{github.com/ssharp120/ClassworkPortfolio}
+
+\end{center}
+
+\section*{Objective}
+
+This text will vary by application but should generally be accomplished in\\two lines or less.
+
+\section*{Education}
+
+\begin{description}
+\item[BS Aerospace Engineering] {\small\color{CalPolyGreen}California Polytechnic State University} \hfill June 2023 (Expected)
+
+\def\labelitemi{$\rightarrow$}
+
+Relevant classwork includes one year of orbital mechanics and various courses in propulsion and communication system design, dynamics and control, space environments, materials science (mechanics and chemistry), and philosophy. Expected GPA $\approx 3.70 \pm 0.05$.
+
+\def\labelitemi{$\circ$}
+
+\textbf{Laboratory Experience:}
+
+\begin{itemize}
+\item \textit{AERO 355/356 – Space Environments I/II}
+
+\quad Testing spacecraft materials, determination of plasma properties, and inducing solar cell degradation by operating student-run vacuum chambers. Thermal analysis; manufacturing of a multi-layer insulation analogue and basic radiation shielding.
+
+\item \textit{AERO 402 – Aerospace Propulsion Systems}
+
+Test fire \& performance analysis of a hybrid rocket motor, biprop engine \& gas turbine.
+
+\item \textit{AERO 447/448 - Spacecraft Design Laboratory I/II}
+
+\quad Generation of systems engineering documents and  communications subsystem design for a theoretical mission to image the surfaces of Jupiter's Galilean moons, with a personal focus on link budgets, hardware selection and RF antenna design.
+\end{itemize}
+
+\textbf{Graduate Level Classes:}
+
+\begin{itemize}
+\item \textit{AERO 540 - Elements of Rocket Propulsion}
+
+\item \textit{AERO 557 - Advanced Orbital Mechanics}
+
+\item \textit{AERO 560 - Advanced Spacecraft Dynamics and Control}
+
+\quad Watch my virtual final project presentation on the topic of controlling a CubeSat with a single variable speed control moment gyroscope on \href{https://www.youtube.com/watch?v=Wp-rK9UpbGA}{YouTube}\footnote[0]{https://www.youtube.com/watch?v=Wp-rK9UpbGA}
+
+\end{itemize}
+
+\textbf{Extracurricular Experience:}
+
+\begin{itemize}
+\item \textit{Hack-A-Sat 4} {\small in collaboration with Stephenson Stellar and the USAFA}
+
+\item \textit{Cal Poly Cycling}
+
+\end{itemize}
+
+\end{description}
+
+\section*{Skills}
+
+\begin{minipage}{3.25cm}
+C, C\#, ArduinoC
+
+Java
+
+Python
+\end{minipage}\hfill\begin{minipage}{3cm}
+MATLAB
+
+Simulink
+
+VBA for Excel
+\end{minipage}\hfill\begin{minipage}{4.75cm}
+\LaTeX{} typesetting 
+
+(\href{https://github.com/ssharp120/LaTeXPDFs/blob/main/customResumeTemplate.tex}{R\'esum\'e source code})\footnotemark
+
+Professional writing
+\end{minipage}\footnotetext{https://github.com/ssharp120/LaTeXPDFs/blob/main/customResumeTemplate.tex}\hfill\begin{minipage}{5cm}
+Project presentations
+
+\ (in-person \& virtual)
+
+Simulation and modeling
+\end{minipage}
+
+\section*{Professional Experience}
+
+\begin{description}
+\item[Estimating Coordinator] {\small Atascadero Glass, Inc.} \hfill 2019-2021
+
+Construction estimating, project management, contract bidding and negotiation, and coordination of vendors, laborers, and other project managers. Weekly team meetings and required financial analysis and tracking. Total contract sales on the order of \$1,000,000.
+\end{description}
+
+\end{document}
+
+
+
